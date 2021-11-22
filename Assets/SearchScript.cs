@@ -37,6 +37,7 @@ public class SearchScript : MonoBehaviour {
         LoadingScreen.SetActive(true);
 
         var request = UnityWebRequest.Get(url);
+        request.SetRequestHeader("User-Agent", "metaverse/0.1");
         yield return request.SendWebRequest();
 
         if (request.isNetworkError) {

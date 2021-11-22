@@ -36,6 +36,9 @@ Bitcoin Donations: 1KUQjXaBgSU8KqoWZGAC8d7maFWzKxqBxq
 - Voice chat
 - Right Click Menu
 - FormControls for UI similar to Angular
+- Audio
+- Video
+- iframe - web rendering
 
 - Caching
 - Local Storage
