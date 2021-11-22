@@ -13,7 +13,11 @@ public interface IVisitor {
     void Visit(Size size);
 
     void Visit(Hud hud);
+    void Visit(Button button);
 
     void Visit(World world);
     void Visit(Box box);
+    void Visit(Plane plane);
+    void Visit(Sphere sphere);
+    void Visit(Cylinder cylinder);
 }

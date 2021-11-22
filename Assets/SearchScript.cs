@@ -6,8 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 using TMPro;
-using System.Numerics;
-// using Microsoft.CodeAnalysis.CSharp.Scripting;
 
 public class SearchScript : MonoBehaviour {
     public GameObject ErrorScreen;
@@ -15,7 +13,10 @@ public class SearchScript : MonoBehaviour {
     public GameObject SearchFieldObject;
 
     public GameObject ContainerObject;
+    public GameObject HudContainerObject;
     public Terrain Terrain;
+
+    public UIPrefabs UIPrefabs;
 
     void Start() {
         StartCoroutine(GetRequest("rikarin.org/index.dtml"));
@@ -47,7 +48,7 @@ public class SearchScript : MonoBehaviour {
             var parser = new DtmlParser(request.downloadHandler.text);
             parser.Parse();
 
-            var interpreter = new Interpreter(ContainerObject, Terrain);
+            var interpreter = new Interpreter(ContainerObject, HudContainerObject, Terrain, UIPrefabs);
             parser.Dtml.Accept(interpreter);
 
             LoadingScreen.SetActive(false);
